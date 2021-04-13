@@ -47,15 +47,13 @@
         angle = Math.PI / 4 // 0 to TWO_PI
 
         window.addEventListener('deviceorientation', function(e) {
-            angle = (e.beta) * Math.PI / 180
-            console.log(angle)
 
-            offsetX = 20 * Math.sin(angle)
-            offsetY = 20 * Math.cos(angle)
+            offsetX = 20 * gamma / 180
+            offsetY = 20 * beta / 180
             console.log(offsetX, offsetY)
 
             box = document.querySelector(".box")
-            box.innerHTML = "alpha: " + e.alpha.toFixed(3) + "<br>beta: " + e.beta.toFixed(3) + "<br>gamma: " + e.gamma.toFixed(3) + "<br>angle: " + angle.toFixed(3) + "<br>offsetX: " + offsetX.toFixed(3) + "<br>offsetY: " + offsetY.toFixed(3)
+            box.innerHTML = "alpha: " + e.alpha.toFixed(3) + "<br>beta: " + e.beta.toFixed(3) + "<br>gamma: " + e.gamma.toFixed(3) + "<br><br>offsetX: " + offsetX.toFixed(3) + "<br>offsetY: " + offsetY.toFixed(3)
             box.style.boxShadow = offsetX + "px " + offsetY + "px 60px #bebebe, -" + offsetX + "px -" + offsetY + "px 60px #ffffff"
             console.log(box.style.boxShadow)
 
