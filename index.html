@@ -48,8 +48,8 @@
 
         window.addEventListener('deviceorientation', function(e) {
 
-            offsetX = 40 * e.gamma / 180
-            offsetY = 40 * e.beta / 180
+            offsetX = 20 * e.gamma / 90
+            offsetY = 20 * e.beta / 90
             console.log(offsetX, offsetY)
 
             box = document.querySelector(".box")
