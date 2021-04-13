@@ -48,12 +48,12 @@
 
         window.addEventListener('deviceorientation', function(e) {
 
-            offsetX = 20 * e.gamma / 90
-            offsetY = 20 * e.beta / 90
+            offsetX = 20 * e.gamma / 50
+            offsetY = 20 * e.beta / 50
             console.log(offsetX, offsetY)
 
             box = document.querySelector(".box")
-            box.innerHTML = "v1.0.0<br><br>alpha: " + e.alpha.toFixed(3) + "<br>beta: " + e.beta.toFixed(3) + "<br>gamma: " + e.gamma.toFixed(3) + "<br><br>offsetX: " + offsetX.toFixed(3) + "<br>offsetY: " + offsetY.toFixed(3)
+            box.innerHTML = "v1.0.1<br><br>alpha: " + e.alpha.toFixed(3) + "<br>beta: " + e.beta.toFixed(3) + "<br>gamma: " + e.gamma.toFixed(3) + "<br><br>offsetX: " + offsetX.toFixed(3) + "<br>offsetY: " + offsetY.toFixed(3)
             box.style.boxShadow = offsetX + "px " + offsetY + "px 60px #bebebe, " + offsetX * -1 + "px " + offsetY * -1 + "px 60px #ffffff"
             console.log(box.style.boxShadow)
 
