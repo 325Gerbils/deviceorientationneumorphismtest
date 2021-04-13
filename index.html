@@ -47,7 +47,7 @@
         var angle = Math.PI / 4 // 0 to TWO_PI
 
         window.addEventListener('deviceorientation', function(e) {
-            angle = (e.alpha) * Math.PI / 180
+            angle = (e.beta) * Math.PI / 180
             console.log(angle)
 
             offsetX = 20 * Math.sin(angle)
