@@ -1,0 +1,67 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #e0e0e0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .box {
+            width: 400px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 60px;
+            background: #e0e0e0;
+            box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+        }
+        
+        .box2 {
+            width: 300px;
+            height: 300px;
+            border-radius: 25px;
+            background: #e0e0e0;
+            box-shadow: inset 20px 20px 60px #bebebe, inset -20px -20px 60px #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box2"></div>
+    </div>
+
+    <script>
+        var angle = Math.PI / 4 // 0 to TWO_PI
+
+        window.addEventListener('deviceorientation', function(e) {
+            angle = (e.alpha) * Math.PI / 180
+            console.log(angle)
+
+            offsetX = Math.round(20 * Math.sin(angle))
+            offsetY = Math.round(20 * Math.cos(angle))
+            console.log(offsetX, offsetY)
+
+            document.querySelector(".box").style.boxShadow = offsetX + "px " + offsetY + "px 60px #bebebe, -" + offsetX + "px -" + offsetY + "px 60px #ffffff"
+            console.log(document.querySelector(".box").style.boxShadow)
+
+            document.querySelector(".box2").style.boxShadow = "inset " + offsetX + "px " + offsetY + "px 60px #bebebe, inset -" + offsetX + "px -" + offsetY + "px 60px #ffffff"
+            console.log(document.querySelector(".box2").style.boxShadow)
+        })
+    </script>
+</body>
+
+</html>
