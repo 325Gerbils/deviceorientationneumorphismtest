@@ -44,18 +44,20 @@
     </div>
 
     <script>
-        var angle = Math.PI / 4 // 0 to TWO_PI
+        angle = Math.PI / 4 // 0 to TWO_PI
 
         window.addEventListener('deviceorientation', function(e) {
             angle = (e.beta) * Math.PI / 180
             console.log(angle)
 
-            offsetX = 20 * Math.sin(angle)
-            offsetY = 20 * Math.cos(angle)
+            offsetX = Math.round(20 * Math.sin(angle))
+            offsetY = Math.round(20 * Math.cos(angle))
             console.log(offsetX, offsetY)
 
-            document.querySelector(".box").style.boxShadow = offsetX + "px " + offsetY + "px 60px #bebebe, -" + offsetX + "px -" + offsetY + "px 60px #ffffff"
-            console.log(document.querySelector(".box").style.boxShadow)
+            box = document.querySelector(".box")
+            box.innerHTML = "angle: " + angle + "offsetX: " + offsetX + " offsetY: " + offsetY
+            box.style.boxShadow = offsetX + "px " + offsetY + "px 60px #bebebe, -" + offsetX + "px -" + offsetY + "px 60px #ffffff"
+            console.log(box.style.boxShadow)
 
             // document.querySelector(".box2").style.boxShadow = "inset " + offsetX + "px " + offsetY + "px 60px #bebebe, inset -" + offsetX + "px -" + offsetY + "px 60px #ffffff"
             // console.log(document.querySelector(".box2").style.boxShadow)
