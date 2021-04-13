@@ -46,7 +46,7 @@
     <script>
         var angle = Math.PI / 4 // 0 to TWO_PI
 
-        window.addEventListener('devicemotion', function(e) {
+        window.addEventListener('deviceorientation', function(e) {
             angle = (e.alpha) * Math.PI / 180
             console.log(angle)
 
