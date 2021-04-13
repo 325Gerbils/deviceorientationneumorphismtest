@@ -47,11 +47,11 @@
         var angle = Math.PI / 4 // 0 to TWO_PI
 
         window.addEventListener('devicemotion', function(e) {
-            angle = (e.beta) * Math.PI / 180
+            angle = (e.alpha) * Math.PI / 180
             console.log(angle)
 
-            offsetX = Math.round(20 * Math.sin(angle))
-            offsetY = Math.round(20 * Math.cos(angle))
+            offsetX = 20 * Math.sin(angle)
+            offsetY = 20 * Math.cos(angle)
             console.log(offsetX, offsetY)
 
             document.querySelector(".box").style.boxShadow = offsetX + "px " + offsetY + "px 60px #bebebe, -" + offsetX + "px -" + offsetY + "px 60px #ffffff"
