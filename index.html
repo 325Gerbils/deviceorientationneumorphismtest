@@ -54,7 +54,7 @@
 
             box = document.querySelector(".box")
             box.innerHTML = "alpha: " + e.alpha.toFixed(3) + "<br>beta: " + e.beta.toFixed(3) + "<br>gamma: " + e.gamma.toFixed(3) + "<br><br>offsetX: " + offsetX.toFixed(3) + "<br>offsetY: " + offsetY.toFixed(3)
-            box.style.boxShadow = offsetX + "px " + offsetY + "px 60px #bebebe, -" + offsetX + "px -" + offsetY + "px 60px #ffffff"
+            box.style.boxShadow = offsetX + "px " + offsetY + "px 60px #bebebe, " + offsetX * -1 + "px " + offsetY * -1 + "px 60px #ffffff"
             console.log(box.style.boxShadow)
 
             // document.querySelector(".box2").style.boxShadow = "inset " + offsetX + "px " + offsetY + "px 60px #bebebe, inset -" + offsetX + "px -" + offsetY + "px 60px #ffffff"
