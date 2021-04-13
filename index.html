@@ -55,7 +55,7 @@
             console.log(offsetX, offsetY)
 
             box = document.querySelector(".box")
-            box.innerHTML = "angle: " + angle + "offsetX: " + offsetX + " offsetY: " + offsetY
+            box.innerHTML = "alpha: " + e.alpha + "<br>beta: " + e.beta + "<br>gamma: " + e.gamma + "<br>angle: " + angle + "<br>offsetX: " + offsetX + "<br>offsetY: " + offsetY
             box.style.boxShadow = offsetX + "px " + offsetY + "px 60px #bebebe, -" + offsetX + "px -" + offsetY + "px 60px #ffffff"
             console.log(box.style.boxShadow)
 
