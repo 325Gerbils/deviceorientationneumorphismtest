@@ -25,7 +25,7 @@
             width: 200px;
             height: 200px;
             display: flex;
-            padding-left: 20px;
+            padding-left: 35px;
             align-items: center;
             /* justify-content: center; */
             border-radius: 50px;
@@ -54,14 +54,22 @@
     <script>
         angle = Math.PI / 4 // 0 to TWO_PI
 
+        box = document.querySelector(".box")
+        box.innerHTML = "v1.0.8<br><br>alpha: <br>beta: <br>gamma: <br><br>offsetX: <br>offsetY: "
+
         window.addEventListener('deviceorientation', function(e) {
 
             offsetX = 20 * e.gamma / 50
             offsetY = 20 * e.beta / 50
             console.log(offsetX, offsetY)
 
-            box = document.querySelector(".box")
-            box.innerHTML = "v1.0.7<br><br>alpha: " + e.alpha.toFixed(3) + "<br>beta: " + e.beta.toFixed(3) + "<br>gamma: " + e.gamma.toFixed(3) + "<br><br>offsetX: " + offsetX.toFixed(3) + "<br>offsetY: " + offsetY.toFixed(3)
+            if (e.alpha == null || e.beta == null || e.gamma == null) {
+                e.alpha = 0
+                e.beta = 50
+                e.gamma = 20
+            }
+
+            box.innerHTML = "v1.0.8<br><br>alpha: " + e.alpha.toFixed(3) + "<br>beta: " + e.beta.toFixed(3) + "<br>gamma: " + e.gamma.toFixed(3) + "<br><br>offsetX: " + offsetX.toFixed(3) + "<br>offsetY: " + offsetY.toFixed(3)
             box.style.boxShadow = offsetX + "px " + offsetY + "px 50px #bebebe, " + offsetX * -1 + "px " + offsetY * -1 + "px 50px #ffffff"
             console.log(box.style.boxShadow)
 
